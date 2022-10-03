@@ -82,3 +82,4 @@ $ echo "carbon.test.diceroll 5 $(date +%s)" | nc $SERVER 2003
 
 Open a browser with URL http:$SERVER:30080 to see the result of the tests:
 
+<img alt="graphite browser" src="img/graphite-diceroll.png" width="400">
