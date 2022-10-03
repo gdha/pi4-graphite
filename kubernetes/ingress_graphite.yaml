@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+#apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: graphite-ingress
+  namespace: graphite
+  labels:
+    app.kubernetes.io/name: graphite
+    app.kubernetes.io/instance: graphite
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            serviceName: graphite-svc
+            servicePort: 80
