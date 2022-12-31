@@ -69,18 +69,13 @@ v1.1: digest: sha256:321ebdd99ea86b5b37dce4db41b4b79752e2bff38548c1173e778f51a8a
 Start a graphite pod on your k3s cluster:
 
 ```
+$ cd kubernetes
 $ kubectl apply -f ./graphite-namespace.yaml namespace/graphite created
-
 $ kubectl apply -f ./graphite-secret.yaml secret/graphite created
-
 $ kubectl apply -f ./ghcr-secret.yaml secret/dockerconfigjson-github-com created
-
 $ kubectl apply -f ./persistentvolumeclaim-graphite.yaml persistentvolumeclaim/graphite created
-
 $ kubectl apply -f ./statefulset_graphite.yaml statefulset.apps/graphite created
-
 $ kubectl apply -f ./service_graphite.yaml service/graphite-svc created
-
 ```
 
 To find the IP address of the host where pod graphite-0 is running on:
