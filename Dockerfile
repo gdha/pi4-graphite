@@ -1,6 +1,6 @@
 # See https://github.com/graphite-project/docker-graphite-statsd/releases
 # for the latest release available
-FROM graphiteapp/graphite-statsd:1.1.10-3
+FROM graphiteapp/graphite-statsd:1.1.10-4
 LABEL org.opencontainers.image.description "Graphite build for ARM64"
 
 ENV  GRAPHITE_ADMIN_USER                            "root"

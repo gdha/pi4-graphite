@@ -3,9 +3,9 @@
 To build the docker image on your Pi4 system execute the following command:
 
 ```bash
-$ ./build.sh v1.1
+$ ./build.sh v1.2
 Login Succeeded
-Building graphite:v1.1
+Building graphite:v1.2
 Sending build context to Docker daemon  137.2kB
 Step 1/11 : FROM graphiteapp/graphite-statsd:1.1.10-3
 1.1.10-3: Pulling from graphiteapp/graphite-statsd
@@ -15,7 +15,7 @@ a152a03e3913: Pull complete
 1e02b3e21032: Pull complete 
 fb7d8007a803: Pull complete 
 Digest: sha256:fb9eb6fdd8f6073dd4ff1acd2169b693d4633045017701713651befbc62fe9f5
-Status: Downloaded newer image for graphiteapp/graphite-statsd:1.1.10-3
+Status: Downloaded newer image for graphiteapp/graphite-statsd:1.1.10-4
  ---> 8b4941073bca
 Step 2/11 : ENV  GRAPHITE_ADMIN_USER                            "root"
  ---> Running in 82deef0870b8
@@ -50,8 +50,8 @@ Step 11/11 : ENTRYPOINT ["/entrypoint.sh"]
 Removing intermediate container 170d9cd59ccc
  ---> afb29746df49
 Successfully built afb29746df49
-Successfully tagged ghcr.io/gdha/graphite:v1.1
-Pushing graphite:v1.1 to GitHub Docker Container registry
+Successfully tagged ghcr.io/gdha/graphite:v1.2
+Pushing graphite:v1.2 to GitHub Docker Container registry
 The push refers to repository [ghcr.io/gdha/graphite]
 2c1f6df34eca: Pushed 
 48b1a46c3476: Layer already exists 
@@ -63,7 +63,7 @@ f1a58751b6e9: Pushed
 5ab5c5bdacc5: Pushed 
 54750bb507e7: Pushed 
 4f4ce317c6bb: Pushed 
-v1.1: digest: sha256:321ebdd99ea86b5b37dce4db41b4b79752e2bff38548c1173e778f51a8a6b7b6 size: 2412
+v1.2: digest: sha256:425dcaf042e72825f0ede2645f196b9192e2d941ce1f7a02057c32a44581c5e4 size: 2412
 ```
 
 Start a graphite pod on your k3s cluster:
