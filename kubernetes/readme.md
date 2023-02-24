@@ -1,3 +1,6 @@
+# Kubernetes yaml files for the graphite pod on PI4
+
+```bash
 $ kubectl apply -f ./graphite-namespace.yaml 
 namespace/graphite created
 
@@ -135,7 +138,7 @@ Running migrations:
 25/01/2023 09:46:22 :: [listener] MetricLineReceiver connection with 127.0.0.1:50670 established
 25/01/2023 09:46:22 :: [listener] MetricLineReceiver connection with 127.0.0.1:50670 closed cleanly
 ok: run: nginx: (pid 71) 39s
-...
+```
 
 # info about secrets:
 https://stackoverflow.com/questions/61912589/how-can-i-use-github-packages-docker-registry-in-kubernetes-dockerconfigjson

@@ -7,8 +7,8 @@ $ ./build.sh v1.2
 Login Succeeded
 Building graphite:v1.2
 Sending build context to Docker daemon  137.2kB
-Step 1/11 : FROM graphiteapp/graphite-statsd:1.1.10-3
-1.1.10-3: Pulling from graphiteapp/graphite-statsd
+Step 1/11 : FROM graphiteapp/graphite-statsd:1.1.10-4
+1.1.10-4: Pulling from graphiteapp/graphite-statsd
 9981e73032c8: Pull complete 
 de219cb0be19: Pull complete 
 a152a03e3913: Pull complete 
