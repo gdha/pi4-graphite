@@ -40,7 +40,7 @@ spec:
                 name: graphite
                 optional: false
           name: graphite
-          image: ghcr.io/gdha/graphite:v1.2
+          image: ghcr.io/gdha/graphite:v1.3
           imagePullPolicy: Always
           livenessProbe:
             failureThreshold: 3
