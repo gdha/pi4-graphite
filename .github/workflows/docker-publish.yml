@@ -63,7 +63,7 @@ jobs:
       # Get the version umber from the Dockerfile
       - name: Get graphite Version from Dockerfile
         run: |-
-          VERSION=`sed -nr "s;.*FROM graphiteapp/graphite-statsd:(.*)*;\1;p" Dockerfile
+          VERSION=`sed -nr "s;.*FROM graphiteapp/graphite-statsd:(.*)*;\1;p" Dockerfile`
           echo "APP_VERSION=${VERSION}"
           echo "APP_VERSION=${VERSION}" >> $GITHUB_ENV
 
