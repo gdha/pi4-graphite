@@ -1,7 +1,10 @@
 # See https://github.com/graphite-project/docker-graphite-statsd/releases
 # for the latest release available
 FROM graphiteapp/graphite-statsd:1.1.10-5
-LABEL org.opencontainers.image.description "Graphite build for ARM64"
+
+LABEL org.opencontainers.image.source=https://github.com/gdha/pi4-graphite
+LABEL org.opencontainers.image.description "Graphite build for AMD64 and ARM64"
+LABEL org.opencontainers.image.licenses=GPL-3.0-or-later
 
 ENV  GRAPHITE_ADMIN_USER                            "root"
 ENV  GRAPHITE_ADMIN_PWD                             "Password4u"
