@@ -11,7 +11,7 @@ on:
   push:
     branches: [ "main" ]
     # Publish semver tags as releases.
-    tags: [ 'v*.*.*' ]
+    tags: [ '*.*.*' ]
   pull_request:
     branches: [ "main" ]
 
@@ -60,6 +60,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # Get the version umber from the Dockerfile
+      - name: Get graphite Version from Dockerfile
+        run: |-
+          VERSION=`sed -nr "s;.*FROM graphiteapp/graphite-statsd:(.*)*;\1;p" Dockerfile
+          echo "APP_VERSION=${VERSION}"
+          echo "APP_VERSION=${VERSION}" >> $GITHUB_ENV
+
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
       - name: Extract Docker metadata
@@ -79,7 +86,10 @@ jobs:
           platforms: linux/amd64, linux/arm64
           #push: ${{ github.event_name != 'pull_request' }}
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          #tags: ${{ steps.meta.outputs.tags }}
+          tags: >-
+            latest
+            ${{ env.APP_VERSION }}
           labels: ${{ steps.meta.outputs.labels }}
           outputs: type=image,name=target
 
