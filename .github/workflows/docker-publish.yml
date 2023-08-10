@@ -84,6 +84,9 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: linux/amd64, linux/arm64
+          registry: ghrc.io/${{ github.actor }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           #push: ${{ github.event_name != 'pull_request' }}
           push: true
           #tags: ${{ steps.meta.outputs.tags }}
