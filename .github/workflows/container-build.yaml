@@ -45,7 +45,7 @@ jobs:
         name: Build Container Image
         uses: redhat-actions/buildah-build@b4dc19b4ba891854660ab1f88a097d45aa158f76 # v2.12
         with:
-          image: graphite
+          image: pi4-graphite
           tags: >-
             latest
             ${{ env.APP_VERSION }}
@@ -58,10 +58,8 @@ jobs:
         if: ${{ (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.publish)) && github.ref == 'refs/heads/main' }}
         uses: redhat-actions/push-to-registry@9986a6552bc4571882a4a67e016b17361412b4df # v2.7
         with:
-          platforms: linux/amd64, linux/arm64
           image: ${{ steps.container.outputs.image }}
           tags: ${{ steps.container.outputs.tags }}
-          labels: ${{ steps.container.outputs.labels }}
           registry: ghcr.io/${{ github.repository_owner }}
           username: ${{ github.actor }}
           password: ${{ github.token }}
