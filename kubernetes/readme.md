@@ -141,5 +141,7 @@ ok: run: nginx: (pid 71) 39s
 ```
 
 # info about secrets:
-https://stackoverflow.com/questions/61912589/how-can-i-use-github-packages-docker-registry-in-kubernetes-dockerconfigjson
 
+- https://stackoverflow.com/questions/61912589/how-can-i-use-github-packages-docker-registry-in-kubernetes-dockerconfigjson
+
+- https://dev.to/asizikov/using-github-container-registry-with-kubernetes-38fb
